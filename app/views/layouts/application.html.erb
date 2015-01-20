@@ -8,7 +8,24 @@
 </head>
 <body>
 
+<div id="banner">
+	<%= image_tag("movie_night.jpg", :size => "100x50") %>
+	DT354-3
+</div>
+<div id="columns">
+    <ul>
+      <li><%= link_to "Questions"%></li>
+      <li><%= link_to "Movie News", 'http://oscar.go.com/nominees' %></li>
+      <li><%= mail_to "Garth1305@gmail.com", "Contact us" %></li>	
+      <li><%= link_to "Movies", movies_path%></li>
+    </ul>
+</div>
+
 <%= yield %>
+
+<div id="footer">
+	My Footer
+</div>
 
 </body>
 </html>
