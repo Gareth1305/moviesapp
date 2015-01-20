@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <%= image_tag(@movie.poster, :size => "150x100") %>
+</p>
+
+<p>
+  <%= sanitize @movie.trailer, :tags => ['iframe'] %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @movie.genre.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
