@@ -12,14 +12,28 @@
 	<%= image_tag("movie_night.jpg", :size => "100x50") %>
 	DT354-3
 </div>
-<div id="columns">
+<div id="nav">
     <ul>
+	
+		<% if !signed_in? %>
+			<li><%= link_to "Sign in", signin_path %></li>
+		<% else %>
+			<li>Signed in as <%= @current_user.name %></li>
+			<li><%= link_to "Sign Out", signout_path %></li>
+		<% end %>
+		
       <li><%= link_to "Questions"%></li>
       <li><%= link_to "Movie News", 'http://oscar.go.com/nominees' %></li>
       <li><%= mail_to "Garth1305@gmail.com", "Contact us" %></li>	
       <li><%= link_to "Movies", movies_path%></li>
     </ul>
 </div>
+
+<% flash.each do |key, value| %>
+	<div class="flash <%= key %>">
+		<%= value %>
+	</div>
+<% end %>
 
 <%= yield %>
 

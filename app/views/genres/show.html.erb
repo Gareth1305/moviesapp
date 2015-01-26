@@ -4,7 +4,19 @@
   <b>Name:</b>
   <%= @genre.name %>
 </p>
-
+<% if @genre.movies.empty? %>
+	<p> There are no movies </p>
+<% else %>
+	<p> These are the movies we have in this genre</P>
+		<% @genre.movies.each do |m| %>
+			<br>
+			<%= m.title %>
+			<br>
+			<%= image_tag(m.poster , :size=>"150x150") %>
+			<br><br><br><br><br><br><br><br>
+		<% end %>
+	<br\><br\><br\>
+<% end %>
 
 <%= link_to 'Edit', edit_genre_path(@genre) %> |
 <%= link_to 'Back', genres_path %>

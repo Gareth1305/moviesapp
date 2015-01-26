@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @user.dob %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @user.sex %>
+</p>
+
+<p>
+  <b>Regular:</b>
+  <%= @user.regular %>
+</p>
+
+<p>
+  <b>Photo:</b>
+  <%= @user.photo %>
+</p>
+
+
+<%= link_to 'Do you want to update?', edit_user_path(@user) %> |
+
